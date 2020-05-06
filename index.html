@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Word Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <h1>Color Word Search</h1>
+    </div>
+    <div>
+        <h2>
+            <p id="word">"Selected Letters"</p>
+        </h2>
+    </div>
+
+    <div class="grid-container">
+        <!-- Headers grid-item-1 -->
+        <div id="main">
+            <h3>INSTRUCTIONS</h3>
+            <ul>
+                <li>Guess the word based on the color Shown.</li>
+                <li>There are total 7 words in the Matrix.</li>
+                <li>Each word is awarded with one Point Score.</li>
+            </ul>
+            <button onclick="startGame()" class="button">StartGame</button>
+        </div>
+        <!-- grid-item2 gameMatrix -->
+        <div id="gamematrix">
+            <button id="y" class="item item-4" style="color:yellow; border: 1.5px solid yellow;">y</button>
+            <button class="item item-6" style="color:blue; border: 1.5px solid blue">b</button>
+            <button class="item item-3" style="color:red; border: 1.5px solid red;">r</button>
+            <button class="item item-5" style="color:brown; border: 1.5px solid brown;">b</button>
+            <button class="item item-2" style="color:pink; border: 1.5px solid pink;">p</button>
+            <button class="item" style="color:darkmagenta; border: 1.5px solid darkmagenta">g</button>
+            <button class="item" style="color:red; border: 1.5px solid red;">e</button>
+            <button class="item" style="color:darkslategray; border: 1.5px solid darkslategray">l</button>
+            <button class="item" style="color:lightseagreen; border: 1.5px solid lightseagreen">e</button>
+            <button class="item" style="color:lightskyblue; border: 1.5px solid lightskyblue">r</button>
+            <button class="item" style="color:darkslateblue; border: 1.5px solid darkslateblue">i</button>
+            <button class="item item-1" style="color:yellow; border: 1.5px solid yellow">g</button>
+            <button class="item" style="color:lightgreen; border: 1.5px solid lightgreen">l</button>
+            <button class="item" style="color:green; border: 1.5px solid green">u</button>
+            <button class="item" style="color:lightsteelblue; border: 1.5px solid lightsteelblue">d</button>
+            <button class="item" style="color:pink; border: 1.5px solid pink">o</button>
+            <button class="item" style="color:violet; border: 1.5px solid violet">n</button>
+            <button class="item" style="color:yellow; border: 1.5px solid yellow">r</button>
+            <button class="item" style="color:burlywood; border: 1.5px solid burlywood">l</button>
+            <button class="item" style="color:blueviolet; border: 1.5px solid blueviolet">e</button>
+            <button class="item" style="color:darkred; border: 1.5px solid darkred">s</button>
+            <button class="item" style="color:burlywood; border: 1.5px solid burlywood">w</button>
+            <button class="item" style="color:red; border: 1.5px solid red">k</button>
+            <button class="item" style="color:blueviolet; border: 1.5px solid blueviolet">e</button>
+            <button class="item item-0" style="color:orangered; border: 1.5px solid orangered">o</button>
+            <button class="item" style="color:palevioletred; border: 1.5px solid palevioletred">r</button>
+            <button class="item" style="color:orange; border: 1.5px solid orange">a</button>
+            <button class="item" style="color:lightblue; border: 1.5px solid lightblue">n</button>
+            <button class="item" style="color:darkslategray; border: 1.5px solid darkslategray">g</button>
+            <button class="item" style="color:green; border: 1.5px solid green">e</button>
+            <button class="item" style="color:black; border: 1.5px solid whitesmoke">w</button>
+            <button class="item" style="color:darkslategray; border: 1.5px solid darkslategray">h</button>
+            <button class="item" style="color:olivedrab; border: 1.5px solid olivedrab">i</button>
+            <button class="item" style="color:orchid; border: 1.5px solid orchid">t</button>
+            <button class="item" style="color:palevioletred; border: 1.5px solid palevioletred">e</button>
+            <button class="item" style="color:peru; border: 1.5px solid peru">n</button>
+        </div>
+
+        <!-- grid-item3 footers(timer and the score) -->
+        <div id="footer">
+            <div id="timer">
+                <h2>Time Left</h2>
+                <div id="time">00:00</div>
+            </div>
+            <div id="Score">
+                <p>Score : <span id="score">0 Points</span></p>
+            </div>
+        </div>
+        <div id="again">
+            <p id="totalScore">Your Total Points:</p>
+            <button onclick="reload()" class="button">Play Again</button>
+            <button onclick="nextLevel()" id="nextLevel" class="button">Next Level</button>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
