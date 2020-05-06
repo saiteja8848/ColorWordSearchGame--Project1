@@ -82,13 +82,14 @@ function timer() {
         clearInterval(timerId);
         indexValue = -1;
         let v = score;
-        score = 0;
+       
         if (v == 7) {
             totalPoints = document.getElementById("again");
             document.getElementById('totalScore').innerHTML = `Your Total Points: ${score}`;
             document.getElementById('nextLevel').style.display = "block";
             totalPoints.style.display = "flex";
         }
+         score = 0;
     }
     else {
         if (CountDown_Time <= 0)
