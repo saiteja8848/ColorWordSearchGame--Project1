@@ -3,13 +3,6 @@
     font-family: DIGITAL;
     src:url(./assets/digital-7.regular.ttf)
 }
-div h1, #word{
-    text-align: center;
-    text-shadow: 2px 2px 8px #FF0000;
-}
-
-
-
 
 body{
   margin: 0;
@@ -19,6 +12,12 @@ body{
   color:white;
   background-size: cover;
   
+}
+
+
+div h1, #word{
+    text-align: center;
+    text-shadow: 2px 2px 8px #FF0000;
 }
 
 .grid-container{

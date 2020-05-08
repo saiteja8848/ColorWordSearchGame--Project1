@@ -8,17 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
-
 <body>
+     <!-- Headings-->
+    <div><h1>Color Word Search</h1></div>
+    <div><h2><p id="word">"Selected Letters"</p></h2></div>
 
-    <div>
-        <h1>Color Word Search</h1>
-    </div>
-    <div>
-        <h2>
-            <p id="word">"Selected Letters"</p>
-        </h2>
-    </div>
+
 
     <div class="grid-container">
         <!-- Headers grid-item-1 -->
@@ -29,7 +24,7 @@
                 <li>There are total 7 words in the Matrix.</li>
                 <li>Each word is awarded with one Point Score.</li>
             </ul>
-            <button onclick="startGame()" class="button">StartGame</button>
+            <button onclick="startGame()" class="button" id="firstLevel">StartGame</button>
         </div>
         <!-- grid-item2 gameMatrix -->
         <div id="gamematrix">
@@ -70,7 +65,6 @@
             <button class="item" style="color:palevioletred; border: 1.5px solid palevioletred">e</button>
             <button class="item" style="color:peru; border: 1.5px solid peru">n</button>
         </div>
-
         <!-- grid-item3 footers(timer and the score) -->
         <div id="footer">
             <div id="timer">
