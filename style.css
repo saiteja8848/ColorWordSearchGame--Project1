@@ -88,7 +88,7 @@ button:hover{
 .button{
     margin-left: 280px;
     border: none;
-    color: white;
+    color:white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -96,7 +96,8 @@ button:hover{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    background-color: #555555; 
+    background-color: #555555;
+    /*background-color:whitesmoke;*/ 
 }
 
 h3{
@@ -124,3 +125,6 @@ h3{
     margin:25px;
 }
 
+#clear{
+    margin:10px;
+}

@@ -10,7 +10,7 @@ let data = ['C', 'K', 'C', 'G', 'B', 'P', 'Y', 'H', 'O', 'R', 'E', 'A', 'A', 'A'
 //status to know which color is active and used to reset the color    
 let status = [0, 0, 0, 0, 0, 0, 0];
 //game timer
-let CountDown_Time = 70;
+let CountDown_Time = 49;
 //id to clear setInterval
 let timerId;
 //user entered word 
@@ -23,6 +23,7 @@ let totalPoints, indexValue = -1, score = 0;
 window.onload = function () {
     totalPoints = document.getElementById("again")
     totalPoints.style.display = "none";
+    document.getElementById('clear').style.display = "none";
     buttons = document.querySelectorAll(".item");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click',
@@ -50,19 +51,18 @@ function startGame() {
     started = true;
     document.getElementById('firstLevel').style.display = "none";
     timerId = setInterval(timer, 1000);
+    document.getElementById('clear').style.display = "block";
 }
 
 //game Level Two Start Point
 function levelTwo() {
-    console.log("level 2 start button");
+    //console.log("level 2 start button");
     for (let i = 0; i < secondLevelColorNames.length; i++) {
         colorNames[i] = secondLevelColorNames[i];
         colorCodes[i] = secondLevelcolorCodes[i];
     }
-    console.log(colorCodes);
-    console.log(colorNames);
-    document.getElementById("secondLevel").style.display = "none";
     timerId = setInterval(timer, 1000);
+    document.getElementById('clear').style.display = "block";
 }
 
 
@@ -91,13 +91,19 @@ function nextLevel() {
     //newButton
     var newButton = document.createElement("button");
     newButton.innerHTML = "Start Game";
+    newButton.backgroundcolor = "whitesmoke";
+    newButton.color = "black";
     newButton.classList.add("button");
     newButton.addEventListener("click", levelTwo);
     newButton.setAttribute("id", "secondLevel");
     //oldButton
     var oldButton = document.getElementById("firstLevel");
     document.getElementById("main").replaceChild(newButton, oldButton);
-
+    //clear button
+    document.getElementById('clear').color = "black";
+    document.getElementById('clear').backgroundcolor = "whitesmoke";
+    document.getElementById('clear').style.display = "none";
+    document.body.style.background = "darkolivegreen";
 }
 
 
@@ -105,6 +111,20 @@ function nextLevel() {
 function reload() {
     location.reload(true);
 }
+
+function clearLetter() {
+    if (word.length >= 2) {
+        word = word.substr(0, word.length - 1);
+        document.getElementById('word').innerHTML = word;
+    }
+    else if (word.length == 1) {
+        word = word.substr(0, word.length - 1);
+        document.getElementById('word').innerHTML = "Selected Letters";
+    }
+    else
+        document.getElementById('word').innerHTML = "Selected Letters";
+}
+
 
 //Reset the color which is previously set
 function reset() {
@@ -120,7 +140,7 @@ function reset() {
 
 //Changing the color of the letters on the matrix for specified time
 function changeColor(second) {
-    if (second % 10 == 0 && second != 0) {
+    if (second % 7 == 0 && second != 0) {
         reset();
         var str = ".item-" + (++index);
         var letter = document.querySelector(str);
@@ -146,7 +166,7 @@ function timer() {
             document.getElementById('nextLevel').style.display = "none";
             totalPoints.style.display = "flex";
         }
-        CountDown_Time = 70;
+        CountDown_Time = 49;
         clearInterval(timerId);
         indexValue = -1;
         let v = score;
@@ -170,11 +190,14 @@ function timer() {
             timeCounter.style.color = "red";
         CountDown_Time <= 9 ? (timeCounter.textContent = "00" + ":" + "0" + CountDown_Time) : (timeCounter.textContent = "00" + ":" + CountDown_Time);
         gameStatus = true;
+
         changeColor(CountDown_Time);
-        if (CountDown_Time % 10 == 0 && CountDown_Time != 0) {
-            indexValue++; console.log("indexValue:", indexValue);
+
+        if (CountDown_Time % 7 == 0 && CountDown_Time != 0) {
+            indexValue++;
             word = "";
             document.getElementById("word").innerHTML.replace = "&nbsp";
+
         }
         if (word.length >= colorNames[indexValue].length && word != "" && indexValue < colorNames.length) {
             if (word == colorNames[indexValue]) {

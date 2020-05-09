@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
+
 <body>
-     <!-- Headings-->
-    <div><h1>Color Word Search</h1></div>
-    <div><h2><p id="word">"Selected Letters"</p></h2></div>
+    <!-- Headings-->
+    <div>
+        <h1>Color Word Search</h1>
+    </div>
+    <div>
+        <h2>
+            <p id="word">"Selected Letters"</p>
+        </h2>
+    </div>
 
 
 
@@ -22,6 +29,7 @@
             <ul>
                 <li>Guess the word based on the color Shown.</li>
                 <li>There are total 7 words in the Matrix.</li>
+                <li>Find the word with in 7 seconds</li>
                 <li>Each word is awarded with one Point Score.</li>
             </ul>
             <button onclick="startGame()" class="button" id="firstLevel">StartGame</button>
@@ -70,6 +78,9 @@
             <div id="timer">
                 <h2>Time Left</h2>
                 <div id="time">00:00</div>
+            </div>
+            <div>
+                <button id="clear" class="button" onclick="clearLetter()">Clear</button>
             </div>
             <div id="Score">
                 <p>Score : <span id="score">0 Points</span></p>
